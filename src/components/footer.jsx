@@ -6,17 +6,20 @@ import {
   IconCopyright,
 } from "@tabler/icons-react";
 
-import { url } from "./whatsapp";
-
 import { Link } from "react-router-dom";
 
-export default function Footer() {
-  function voltarAoTopo() {
+export function voltarAoTopo() {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   }
+
+export default function Footer() {
+
+  const mensagem = "Olá! Vim pelo sitee gostaria de saber mais sobre os serviços do IMI.";
+
+  const url = `https://wa.me/5521980724943?text=${encodeURIComponent(mensagem)}`; 
 
   function getAnoAtual(ano) {
     const anoAtual = new Date().getFullYear()
@@ -49,7 +52,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 justify-center">
 
               <img
-                src="/imgs/Logo_.png"
+                src="/imgs/logo.png"
                 alt="IMI - Instituto de Metrologia Industrial"
                 className="w-36"
               />

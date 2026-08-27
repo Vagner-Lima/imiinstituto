@@ -5,6 +5,7 @@ import WhatsAppButton from "../components/whatsapp";
 import Laboratorios from "../components/laboratorios";
 import Inmetro from "../components/inmetro";
 import NR13 from "../components/nr13";
+import Sobre from "../components/sobre";
 
 export default function Home() {
   return (
@@ -41,9 +42,10 @@ export default function Home() {
       </section>
 
       <main>
+        <Sobre/>
         <Laboratorios/>
-        <Inmetro/>
         <NR13/>
+        <Inmetro/>  
       </main>
 
       <Footer />

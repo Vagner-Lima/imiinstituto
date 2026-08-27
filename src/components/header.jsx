@@ -39,7 +39,7 @@ export default function Header() {
           onClick={fecharMenu}
         >
           <img
-            src="/imgs/Logo_.png"
+            src="/imgs/logo.png"
             alt="IMI - Instituto de Metrologia Industrial"
             className="w-14 sm:w-20"
           />

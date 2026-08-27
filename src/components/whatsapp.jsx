@@ -1,11 +1,9 @@
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 
-const telefone = "5521980724943";
-
 const mensagem =
   "Olá! Vim pelo site e gostaria de saber mais sobre os serviços do IMI.";
 
-export const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+const url = `https://wa.me/5521980724943?text=${encodeURIComponent(mensagem)}`;
 
 export default function WhatsAppButton() {
 

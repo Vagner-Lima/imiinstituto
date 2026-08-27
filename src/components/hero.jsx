@@ -1,14 +1,14 @@
 import { IconChevronDown } from "@tabler/icons-react";
 
-export default function Hero() {
-  function scrollDown() {
+export function scrollDown(local) {
     document
-      .getElementById("laboratorios")
+      .getElementById(local)
       ?.scrollIntoView({
         behavior: "smooth",
       });
   }
 
+export default function Hero() {
   return (
     <section
       className="
@@ -61,7 +61,7 @@ export default function Hero() {
 
         <button
           type="button"
-          onClick={scrollDown}
+          onClick={() => {scrollDown("sobre")}}
           aria-label="Conheça nossos laboratórios"
           className="
             mt-10
