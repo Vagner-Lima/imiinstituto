@@ -3,6 +3,8 @@ import Hero from "../components/hero";
 import Footer from "../components/footer";
 import WhatsAppButton from "../components/whatsapp";
 import Laboratorios from "../components/laboratorios";
+import Inmetro from "../components/inmetro";
+import NR13 from "../components/nr13";
 
 export default function Home() {
   return (
@@ -40,6 +42,8 @@ export default function Home() {
 
       <main>
         <Laboratorios/>
+        <Inmetro/>
+        <NR13/>
       </main>
 
       <Footer />

@@ -3,6 +3,7 @@ import {
   IconMail,
   IconMapPin,
   IconArrowUp,
+  IconCopyright,
 } from "@tabler/icons-react";
 
 import { url } from "./whatsapp";
@@ -17,10 +18,16 @@ export default function Footer() {
     });
   }
 
-  return (
-    <footer className="border-t border-gray-200 bg-white bg-">
+  function getAnoAtual(ano) {
+    const anoAtual = new Date().getFullYear()
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    return (`${ano} - ${anoAtual}`)
+  }
+
+  return (
+    <footer className="border-t border-gray-200 w-screen bg-[url(/imgs/footer.jpg)] bg-center">
+
+      <div className="w-screen px-4 sm:px-6 lg:px-8 bg-gray-950/95 justify-center items-center">
 
         {/* =========================================================
             CONTEÚDO PRINCIPAL
@@ -32,31 +39,28 @@ export default function Footer() {
             py-3
             md:grid-cols-3
             lg:py-5
-            bg-gray-950/80
-            w-screen
           "
         >
 
           {/* Identidade */}
 
-          <div>
+          <div className="justify-center flex flex-col items-center">
 
             <div className="flex items-center gap-4 justify-center">
 
               <img
                 src="/imgs/Logo_.png"
                 alt="IMI - Instituto de Metrologia Industrial"
-                className="w-32"
+                className="w-36"
               />
 
-              <div className="h-8 w-px bg-gray-200" />
+              <div className="h-8 w-px bg-blue-600" />
 
               <img
                 src="/imgs/Selo.png"
                 alt="Selo de acreditação"
-                className="w-25"
+                className="w-24"
               />
-
             </div>
 
             <p
@@ -68,9 +72,8 @@ export default function Footer() {
                 text-gray-500
               "
             >
-              Instituto de Metrologia Industrial.
-              Excelência em metrologia e instrumentação
-              desde 1997.
+              Instituto de Metrologia Industrial.<br/>
+              Excelência em metrologia e instrumentação desde 1997.
             </p>
 
           </div>
@@ -80,7 +83,7 @@ export default function Footer() {
 
           <div>
 
-            <h2 className="text-sm font-semibold text-gray-900">
+            <h2 className="text-sm font-semibold text-gray-200">
               Navegação
             </h2>
 
@@ -114,6 +117,21 @@ export default function Footer() {
                   >
                     Laboratórios
                   </Link>
+                  
+                </li>
+
+                <li>
+                  <Link
+                    to="/nr13/"
+                    className="
+                      text-sm
+                      text-gray-500
+                      transition-colors
+                      hover:text-blue-600
+                    "
+                  >
+                    NR 13
+                  </Link>
                 </li>
 
                 <li>
@@ -144,20 +162,6 @@ export default function Footer() {
                   </Link>
                 </li>
 
-                <li>
-                  <Link
-                    to="/nr13/"
-                    className="
-                      text-sm
-                      text-gray-500
-                      transition-colors
-                      hover:text-blue-600
-                    "
-                  >
-                    NR 13
-                  </Link>
-                </li>
-
               </ul>
 
             </nav>
@@ -169,11 +173,11 @@ export default function Footer() {
 
           <div>
 
-            <h2 className="text-sm font-semibold text-gray-900">
+            <h2 className="text-sm font-semibold text-gray-200">
               Contato
             </h2>
 
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 space-y-3 flex flex-col items-center justify-center">
 
               <a
                 href={url}
@@ -186,7 +190,8 @@ export default function Footer() {
                   text-sm
                   text-gray-500
                   transition-colors
-                  hover:text-green-600
+                  hover:text-blue-600
+                  justify-center
                 "
               >
                 <IconBrandWhatsapp size={18} />
@@ -205,6 +210,7 @@ export default function Footer() {
                   text-gray-500
                   transition-colors
                   hover:text-blue-600
+                  justify-center
                 "
               >
                 <IconMail size={18} />
@@ -226,6 +232,7 @@ export default function Footer() {
                   text-gray-500
                   transition-colors
                   hover:text-blue-600
+                  justify-center
                 "
               >
                 <IconMapPin
@@ -266,12 +273,32 @@ export default function Footer() {
           "
         >
 
-          <p className="text-xs text-gray-400 sm:text-sm">
-            © 1997–2026 IMI - Instituto de Metrologia Industrial.
+          <p className="text-xs text-gray-400 sm:text-sm flex gap-1 items-center">
+            <IconCopyright/> {getAnoAtual(1997)} IMI - Instituto de Metrologia Industrial.
           </p>
 
 
           <div className="flex items-center gap-5">
+
+            <button
+              type="button"
+              onClick={voltarAoTopo}
+              aria-label="Voltar ao topo"
+              className="
+                flex
+                items-center
+                gap-1.5
+                text-xs
+                text-gray-400
+                transition-colors
+                hover:text-blue-600
+                sm:text-sm
+              "
+            >
+              Topo
+              <IconArrowUp size={15} />
+            </button>
+
 
             <Link
               to="/privacidade"
@@ -298,25 +325,6 @@ export default function Footer() {
             >
               Termos
             </Link>
-
-            <button
-              type="button"
-              onClick={voltarAoTopo}
-              aria-label="Voltar ao topo"
-              className="
-                flex
-                items-center
-                gap-1.5
-                text-xs
-                text-gray-400
-                transition-colors
-                hover:text-blue-600
-                sm:text-sm
-              "
-            >
-              Topo
-              <IconArrowUp size={15} />
-            </button>
 
           </div>
 

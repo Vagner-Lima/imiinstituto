@@ -65,7 +65,7 @@ export default function Hero() {
           aria-label="Conheça nossos laboratórios"
           className="
             mt-10
-            animate-bounce
+            animate-pulse
             text-white
             transition-colors
             duration-200
