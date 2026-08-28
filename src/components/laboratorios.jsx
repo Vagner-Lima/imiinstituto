@@ -1,4 +1,4 @@
-const laboratorios = [
+const lab = [
   {
     nome: "Laboratório Dimensional",
     imagem: "./imgs/imi/labDimensional.jpg",
@@ -26,7 +26,7 @@ const laboratorios = [
   },
 ];
 
-function Laboratorios() {
+export default function Laboratorios() {
   return (
     <section
       id="laboratorios"
@@ -57,7 +57,7 @@ function Laboratorios() {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
 
-        {laboratorios.map((laboratorio) => (
+        {lab.map((laboratorio) => (
 
           <a
             key={laboratorio.nome}
@@ -93,5 +93,3 @@ function Laboratorios() {
     </section>
   );
 }
-
-export default Laboratorios;

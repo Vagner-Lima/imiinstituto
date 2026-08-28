@@ -45,7 +45,9 @@ export default function Header() {
           />
         </Link>
 
-        {/* Menu Desktop */}
+        {/* =====================================================
+            MENU DESKTOP
+        ====================================================== */}
         <div className="hidden items-center gap-8 lg:flex">
 
           <ul className="flex items-center gap-8 text-gray-100">
@@ -66,7 +68,7 @@ export default function Header() {
 
             <li>
               <Link
-                to="/laboratorios/"
+                to="/laboratorios"
                 className="
                   font-medium
                   transition-colors
@@ -80,7 +82,7 @@ export default function Header() {
 
             <li>
               <Link
-                to="/produtos/"
+                to="/produtos"
                 className="
                   font-medium
                   transition-colors
@@ -94,7 +96,7 @@ export default function Header() {
 
             <li>
               <Link
-                to="/empresa/"
+                to="/empresa"
                 className="
                   font-medium
                   transition-colors
@@ -108,8 +110,11 @@ export default function Header() {
 
           </ul>
 
+          {/* Área do cliente - EXTERNA */}
           <a
             href="https://relatorios.imiinstituto.com.br/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               inline-flex
               h-11
@@ -135,7 +140,9 @@ export default function Header() {
 
         </div>
 
-        {/* Botão Mobile */}
+        {/* =====================================================
+            BOTÃO MOBILE
+        ====================================================== */}
         <button
           type="button"
           aria-label={
@@ -162,16 +169,19 @@ export default function Header() {
             <IconMenu2 size={28} />
           )}
         </button>
+
       </nav>
 
-      {/* Menu Mobile */}
+      {/* =====================================================
+          MENU MOBILE
+      ====================================================== */}
       {menuAberto && (
         <div
           className="
             absolute
             left-0
             right-0
-            top-18
+            top-full
             border-t
             border-white/10
             bg-gray-950/95
@@ -188,6 +198,7 @@ export default function Header() {
               py-6
               sm:px-6
             "
+            aria-label="Menu mobile"
           >
             <ul className="space-y-2">
 
@@ -212,7 +223,7 @@ export default function Header() {
 
               <li>
                 <Link
-                  to="/laboratorios/"
+                  to="/laboratorios"
                   onClick={fecharMenu}
                   className="
                     block
@@ -231,7 +242,7 @@ export default function Header() {
 
               <li>
                 <Link
-                  to="/produtos/"
+                  to="/produtos"
                   onClick={fecharMenu}
                   className="
                     block
@@ -250,7 +261,7 @@ export default function Header() {
 
               <li>
                 <Link
-                  to="/empresa/"
+                  to="/empresa"
                   onClick={fecharMenu}
                   className="
                     block
@@ -268,8 +279,13 @@ export default function Header() {
               </li>
 
               <li className="pt-2">
+
+                {/* Área do cliente - EXTERNA */}
                 <a
                   href="https://relatorios.imiinstituto.com.br/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={fecharMenu}
                   className="
                     flex
                     w-full
@@ -290,12 +306,14 @@ export default function Header() {
 
                   Área do Cliente
                 </a>
+
               </li>
 
             </ul>
           </nav>
         </div>
       )}
+
     </header>
   );
 }

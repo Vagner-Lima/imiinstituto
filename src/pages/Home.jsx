@@ -43,7 +43,7 @@ export default function Home() {
 
       <main>
         <Sobre/>
-        <Laboratorios/>
+        <Laboratorios />
         <NR13/>
         <Inmetro/>  
       </main>

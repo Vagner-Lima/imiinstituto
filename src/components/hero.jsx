@@ -1,12 +1,5 @@
 import { IconChevronDown } from "@tabler/icons-react";
-
-export function scrollDown(local) {
-    document
-      .getElementById(local)
-      ?.scrollIntoView({
-        behavior: "smooth",
-      });
-  }
+import { scrollDown } from "../lib/scrollDown";
 
 export default function Hero() {
   return (

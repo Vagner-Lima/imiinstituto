@@ -1,5 +1,5 @@
 import {
-  IconArrowRight,
+  IconArrowDown,
   IconCheck,
   IconFileCertificate,
   IconPhone,
@@ -8,11 +8,11 @@ import {
 } from "@tabler/icons-react";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { scrollDown } from "../lib/scrollDown";
+import { whatsappUrl } from "../components/whatsapp";
 
 const mensagem =
   "Olá! Vim pelo site e gostaria de saber mais sobre os serviços de NR13.";
-
-const url = `https://wa.me/5521980724943?text=${encodeURIComponent(mensagem)}`;
 
 export default function NR13() {
   const servicos = [
@@ -79,10 +79,9 @@ export default function NR13() {
           HERO
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-gray-950">
+      <section className="relative min-h-screen overflow-hidden bg-gray-950">
 
-        <Header/>
-
+        {/* Fundo */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -90,76 +89,93 @@ export default function NR13() {
           }}
         />
 
-        <div className="absolute inset-0 bg-gray-950/80"/>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gray-950/80" />
 
-        <div className="relative py-24 flex items-center justify-center">
+        {/* Conteúdo */}
+        <div className="relative z-10 flex min-h-screen flex-col">
 
-          <div className="flex flex-col items-center justify-center">
+          <Header />
 
-            <span className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-400">
-              Engenharia e Inspeção
-            </span>
+          <div
+            className="
+              flex
+              flex-1
+              items-center
+              justify-center
+              px-4
+              py-20
+              text-center
+              sm:px-6
+              lg:px-8
+            "
+          >
 
-            <h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Norma Regulamentadora{" "}
-              <span className="text-blue-500">
-                NR-13
-              </span>
-            </h1>
+            <div className="flex flex-col items-center">
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300 sm:text-xl">
-              Inspeção, calibração e serviços especializados
-              para equipamentos e sistemas submetidos à pressão.
-            </p>
+              <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                Norma Regulamentadora{" "}
+                <span className="text-blue-500">
+                  NR-13
+                </span>
+              </h1>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300 sm:text-xl">
+                Inspeção, calibração e serviços especializados
+                para equipamentos e sistemas submetidos à pressão.
+              </p>
 
-              <a
-                href="#servicos"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-md
-                  bg-blue-600
-                  px-6
-                  py-3
-                  font-semibold
-                  text-white
-                  transition
-                  hover:bg-blue-700
-                "
-              >
-                Conheça nossos serviços
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-                <IconArrowRight size={20} />
-              </a>
+                <button
+                  type="button"
+                  onClick={() => scrollDown("introducao")}
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-md
+                    bg-blue-600
+                    px-6
+                    py-3
+                    font-semibold
+                    text-white
+                    transition
+                    hover:bg-blue-700
+                  "
+                >
+                  Conheça nossos serviços
 
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-md
-                  border
-                  border-white/30
-                  px-6
-                  py-3
-                  font-semibold
-                  text-white
-                  transition
-                  hover:bg-white/10
-                "
-              >
-                <IconPhone size={20} />
+                  <IconArrowDown size={20} />
+                </button>
 
-                Fale conosco
-              </a>
+                <a
+                  href={whatsappUrl(mensagem)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-md
+                    border
+                    border-white/30
+                    px-6
+                    py-3
+                    font-semibold
+                    text-white
+                    transition
+                    hover:bg-white/10
+                  "
+                >
+                  <IconPhone size={20} />
+
+                  Faça seu orçamento
+                </a>
+
+              </div>
 
             </div>
 
@@ -174,7 +190,7 @@ export default function NR13() {
           INTRODUÇÃO
       ========================================================= */}
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" id="introducao">
 
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
 
@@ -194,10 +210,8 @@ export default function NR13() {
 
               <p>
                 O departamento de Engenharia do{" "}
-                <strong className="text-gray-900">
-                  IMI – Instituto de Metrologia Industrial
-                </strong>{" "}
-                é especializado na área de NR-13, oferecendo
+                <strong className="text-blue-600">IMI</strong>{" "}
+                é especializado na área de NR-13 <span className="text-blue-600 font-bold">ONSHORE e OFFSHORE</span>, oferecendo
                 serviços de inspeção, ensaios e calibração para
                 equipamentos e sistemas submetidos à pressão.
               </p>
@@ -269,9 +283,11 @@ export default function NR13() {
 
       <section className="border-y border-gray-100 bg-gray-50">
 
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="px-4 py-6 sm:px-6 lg:px-8">
 
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="text-center flex-col items-center py-5 flex">
+
+            <IconSettings size={32} className="text-blue-600"/>
 
             <p className="text-lg leading-8 text-gray-600 sm:text-xl">
               Investimos continuamente em tecnologia,
@@ -380,7 +396,7 @@ export default function NR13() {
           ATUAÇÃO
       ========================================================= */}
 
-      <section className="bg-gray-950 text-white">
+      <section className="text-gray-800">
 
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
 
@@ -388,7 +404,7 @@ export default function NR13() {
 
             <div>
 
-              <span className="text-sm font-semibold uppercase tracking-wider text-blue-400">
+              <span className="text-sm font-semibold uppercase tracking-wider text-blue-600">
                 Nossa atuação
               </span>
 
@@ -396,14 +412,14 @@ export default function NR13() {
                 Experiência aplicada à segurança
               </h2>
 
-              <p className="mt-5 text-lg leading-8 text-gray-300">
+              <p className="mt-5 text-lg leading-8 text-gray-600">
                 A experiência do IMI em metrologia,
                 instrumentação e engenharia permite oferecer
                 uma abordagem técnica integrada às necessidades
                 de nossos clientes.
               </p>
 
-              <p className="mt-4 text-lg leading-8 text-gray-300">
+              <p className="mt-4 text-lg leading-8 text-gray-600">
                 Nossa atuação busca contribuir para a
                 confiabilidade dos equipamentos e para a
                 segurança das instalações industriais.
@@ -438,12 +454,13 @@ export default function NR13() {
                       justify-center
                       rounded-full
                       bg-blue-600
+                      text-white
                     "
                   >
                     <IconCheck size={18} />
                   </div>
 
-                  <span className="text-lg text-gray-200">
+                  <span className="text-lg text-gray-600">
                     {item}
                   </span>
 
@@ -464,13 +481,13 @@ export default function NR13() {
           CTA
       ========================================================= */}
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
 
         <div
           className="
             overflow-hidden
             rounded-2xl
-            bg-blue-600
+            bg-blue-900
             px-6
             py-12
             text-center
@@ -489,7 +506,7 @@ export default function NR13() {
           </p>
 
           <a
-            href={url}
+            href={whatsappUrl(mensagem)}
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -499,14 +516,14 @@ export default function NR13() {
               justify-center
               gap-2
               rounded-md
-              bg-white
+              bg-gray-50
               px-7
               py-3
               font-semibold
-              text-blue-700
+              text-blue-600
               shadow-sm
               transition
-              hover:bg-gray-100
+              hover:bg-gray-300
             "
           >
             <IconPhone size={20} />
