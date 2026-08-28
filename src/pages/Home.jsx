@@ -6,6 +6,7 @@ import Laboratorios from "../components/laboratorios";
 import Inmetro from "../components/inmetro";
 import NR13 from "../components/nr13";
 import Sobre from "../components/sobre";
+import CTACalib from "../components/CTACalib";
 
 export default function Home() {
   return (
@@ -45,7 +46,8 @@ export default function Home() {
         <Sobre/>
         <Laboratorios />
         <NR13/>
-        <Inmetro/>  
+        <Inmetro/>
+        <CTACalib/>
       </main>
 
       <Footer />

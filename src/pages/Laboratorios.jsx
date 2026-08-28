@@ -14,6 +14,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { whatsappUrl } from "../components/whatsapp";
 import { scrollDown } from "../lib/scrollDown";
+import CTACalib from "../components/CTACalib";
 
 const mensagem = "Olá! Vim pelo site e gostaria de saber mais sobre os serviços de Calibração do IMI."
 
@@ -46,7 +47,7 @@ const laboratorios = [
       "Esquadro Combinado",
       "Medidor de Espessura por Ultrassom",
       "Medidor de Espessura de Película Úmida ou Seca",
-      "Padrão de Espessura / Lâmina para Medidor de Camada de Tinta Seca",
+      "Padrão de Espessura para Medidor de Camada de Tinta Seca",
       "Pastilha Sensora",
       "Relógio Apalpador",
       "Rugosímetro de Relógio",
@@ -127,7 +128,7 @@ const laboratorios = [
 
   {
     id: "forca",
-    nome: "Laboratório de Massa, Força, Torque e Dureza",
+    nome: "Laboratório de Massa, Força e Torque",
     imagem: "/imgs/imi/labTorque.jpg",
     resumo:
       "Calibração de instrumentos utilizados em medições de força, torque e dureza aplicadas aos processos de fabricação, inspeção e manutenção.",
@@ -138,7 +139,7 @@ const laboratorios = [
     ],
 
     rastreados: [
-      "Instrumentos de Medição de Força de Uso Geral em Tração e Compressão",
+      "Instrumentos de Medição de Força por Tração ou Compressão",
       "Dinamômetros",
       "Balanças",
       "Células de Carga",
@@ -301,31 +302,7 @@ export default function Laboratorios() {
             "
           >
 
-            <div className="w-full max-w-5xl text-center">
-
-              {/* Identificação */}
-
-              <div
-                className="
-                  mx-auto
-                  flex
-                  h-16
-                  w-16
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-blue-400/30
-                  bg-blue-500/10
-                  text-blue-400
-                  backdrop-blur-sm
-                "
-              >
-                <IconTestPipe
-                  size={34}
-                  stroke={1.5}
-                />
-              </div>
+            <div className="w-full text-center">
 
               <span
                 className="
@@ -345,7 +322,7 @@ export default function Laboratorios() {
 
               <h1
                 className="
-                  mt-5
+                  mt-2
                   min-h-16
                   text-3xl
                   font-bold
@@ -678,7 +655,7 @@ export default function Laboratorios() {
               LABORATÓRIOS
           ===================================================== */}
 
-          <div className="mt-12 space-y-8">
+          <div className="mt-6 space-y-4 flex justify-center items-center flex-col">
 
             {laboratorios.map((laboratorio) => (
 
@@ -692,6 +669,7 @@ export default function Laboratorios() {
                   border-gray-200
                   bg-white
                   shadow-sm
+                  w-5xl
                 "
               >
 
@@ -762,15 +740,15 @@ export default function Laboratorios() {
                   "
                 >
 
-                  {/* =================================================
+                 {/* =================================================
                       ACREDITADOS
                   ================================================= */}
 
-                  <div className="flex justify-baseline items-center flex-col">
-
-                    <div className="flex items-center gap-3 flex-row">
+                  {laboratorio.acreditados?.length > 0 && (
+                    <div className="flex flex-col items-center justify-baseline">
 
                       <div className="flex flex-col items-center justify-center">
+
                         <div
                           className="
                             flex
@@ -787,28 +765,25 @@ export default function Laboratorios() {
                           <IconCertificate size={21} />
                         </div>
 
+                        <h4
+                          className="
+                            mt-3
+                            font-semibold
+                            text-gray-900
+                          "
+                        >
+                          Serviços acreditados
+                        </h4>
 
-                          <h4
-                            className="
-                              font-semibold
-                              text-gray-900
-                            "
-                          >
-                            Serviços acreditados
-                          </h4>
-
-                          <p className="text-xs text-gray-500">
-                            Serviços dentro do escopo de acreditação (RBC).
-                          </p>
+                        <p className="text-center text-xs text-gray-500">
+                          Serviços dentro do escopo de acreditação (RBC).
+                        </p>
 
                       </div>
 
-                    </div>
+                      <ul className="mt-5 space-y-2.5">
 
-                    <ul className="mt-5 space-y-2.5">
-
-                      {laboratorio.acreditados.map(
-                        (servico) => (
+                        {laboratorio.acreditados.map((servico) => (
 
                           <li
                             key={servico}
@@ -836,43 +811,48 @@ export default function Laboratorios() {
 
                           </li>
 
-                        )
-                      )}
+                        ))}
 
-                    </ul>
+                      </ul>
 
-                    <img src="/imgs/Selo.png" className="w-30 h-auto pt-10"/>
+                      <img
+                        src="/imgs/Selo.png"
+                        alt="Selo de acreditação"
+                        className="h-auto w-30 pt-10"
+                      />
 
-                  </div>
+                    </div>
+                  )}
 
 
                   {/* =================================================
                       RASTREADOS
                   ================================================= */}
 
-                  <div className="flex justify-baseline items-center flex-col">
+                  {laboratorio.rastreados?.length > 0 && (
+                    <div className="flex flex-col items-center justify-baseline">
 
                       <div className="flex flex-col items-center justify-center">
-                      <div
-                        className="
-                          flex
-                          h-10
-                          w-10
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-lg
-                          bg-gray-100
-                          text-gray-600
-                        "
-                      >
-                        <IconCheck size={21} />
-                      </div>
 
-                      <div>
+                        <div
+                          className="
+                            flex
+                            h-10
+                            w-10
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-lg
+                            bg-gray-100
+                            text-gray-600
+                          "
+                        >
+                          <IconCheck size={21} />
+                        </div>
 
                         <h4
                           className="
+                            mt-3
                             font-semibold
                             text-gray-900
                           "
@@ -880,19 +860,15 @@ export default function Laboratorios() {
                           Serviços rastreados
                         </h4>
 
-                        <p className="text-xs text-gray-500">
-                          Serviços realizados com rastreabilidade
-                          metrológica.
+                        <p className="text-center text-xs text-gray-500">
+                          Serviços realizados com rastreabilidade metrológica.
                         </p>
 
                       </div>
 
-                    </div>
+                      <ul className="mt-5 space-y-2.5">
 
-                    <ul className="mt-5 space-y-2.5">
-
-                      {laboratorio.rastreados.map(
-                        (servico) => (
+                        {laboratorio.rastreados.map((servico) => (
 
                           <li
                             key={servico}
@@ -920,12 +896,12 @@ export default function Laboratorios() {
 
                           </li>
 
-                        )
-                      )}
+                        ))}
 
-                    </ul>
+                      </ul>
 
-                  </div>
+                    </div>
+                  )}
 
                 </div>
 
@@ -944,75 +920,7 @@ export default function Laboratorios() {
           CTA
       ========================================================= */}
 
-      <section className="bg-gray-950 text-white">
-
-        <div
-          className="
-            mx-auto
-            max-w-7xl
-            px-4
-            py-20
-            text-center
-            sm:px-6
-            lg:px-8
-          "
-        >
-
-          <h2
-            className="
-              text-3xl
-              font-bold
-              sm:text-4xl
-            "
-          >
-            Precisa calibrar um instrumento?
-          </h2>
-
-          <p
-            className="
-              mx-auto
-              mt-4
-              max-w-2xl
-              text-lg
-              leading-8
-              text-gray-300
-            "
-          >
-            Entre em contato com nossa equipe para verificar
-            a disponibilidade do serviço e obter mais
-            informações.
-          </p>
-
-          <a
-            href={whatsappUrl(mensagem)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              mt-8
-              inline-flex
-              items-center
-              justify-center
-              gap-2
-              rounded-md
-              bg-blue-600
-              px-7
-              py-3
-              font-semibold
-              text-white
-              transition
-              hover:bg-blue-700
-            "
-          >
-            <IconPhone size={20} />
-
-            Fale com nossa equipe
-
-            <IconArrowRight size={20} />
-          </a>
-
-        </div>
-
-      </section>
+      <CTACalib/>
 
 
       {/* =========================================================
