@@ -14,7 +14,6 @@ export default function CTACalib() {
     cnpj: "",
     instrumento: "",
     laboratorio: "",
-    servico: "",
     observacoes: "",
   });
 
@@ -43,7 +42,6 @@ CNPJ: ${formulario.cnpj || "Não Informado"}
 
 Instrumento: ${formulario.instrumento || "Não Informado"}
 Laboratório / Grandeza: ${formulario.laboratorio || "Não Informado"}
-Serviço desejado: ${formulario.servico || "Não Informado"}
 
 Observações:
 ${formulario.observacoes || "Não informado"}
@@ -376,70 +374,6 @@ Gostaria de receber informações sobre disponibilidade, prazo e orçamento.
               </select>
 
             </div>
-
-
-            {/* Serviço */}
-
-            <div className="sm:col-span-2">
-
-              <label
-                htmlFor="servico"
-                className="mb-2 block text-sm font-medium text-gray-200"
-              >
-                Serviço desejado *
-              </label>
-
-              <select
-                id="servico"
-                name="servico"
-                required
-                value={formulario.servico}
-                onChange={handleChange}
-                className="
-                  h-11
-                  w-full
-                  rounded-md
-                  border
-                  border-white/10
-                  bg-gray-900
-                  px-4
-                  text-sm
-                  text-white
-                  outline-none
-                  focus:border-blue-500
-                  focus:ring-1
-                  focus:ring-blue-500
-                "
-              >
-
-                <option value="">
-                  Selecione uma opção
-                </option>
-
-                <option value="Calibração">
-                  Calibração
-                </option>
-
-                <option value="Ensaio">
-                  Ensaio
-                </option>
-
-                <option value="Inspeção">
-                  Inspeção
-                </option>
-
-                <option value="Calibração e ensaio">
-                  Calibração e ensaio
-                </option>
-
-                <option value="Não sei informar">
-                  Não sei informar
-                </option>
-
-              </select>
-
-            </div>
-
 
             {/* Observações */}
 

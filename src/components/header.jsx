@@ -184,16 +184,14 @@ export default function Header() {
             top-full
             border-t
             border-white/10
-            bg-gray-950/95
+            bg-gray-900/95
             shadow-xl
             backdrop-blur-md
-            lg:hidden
-          "
+            lg:hidden          
+            "
         >
           <nav
             className="
-              mx-auto
-              max-w-7xl
               px-4
               py-6
               sm:px-6

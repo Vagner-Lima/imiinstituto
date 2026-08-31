@@ -9,6 +9,8 @@ import Privacidade from "./pages/privacidade";
 import Termos from "./pages/Termos";
 import NR13 from "./pages/NR13";
 import Labs from "./pages/Laboratorios";
+import Empresa from "./pages/Empresa";
+import Produtos from "./pages/Produtos";
 
 export default function App() {
   return (
@@ -24,6 +26,10 @@ export default function App() {
         <Route path="/nr13" element={<NR13 />} />
 
         <Route path="/laboratorios" element={<Labs />} />
+
+        <Route path="/empresa" element={<Empresa/>}/>
+
+        <Route path="/produtos" element={<Produtos/>} />
 
       </Routes>
     </BrowserRouter>
