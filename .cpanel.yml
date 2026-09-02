@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/imiins54/public_html/
-    - npm install
+    - npm ci
     - npm run build
     - /bin/cp -R dist/* $DEPLOYPATH
