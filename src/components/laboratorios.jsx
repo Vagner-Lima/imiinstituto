@@ -2,27 +2,27 @@ const lab = [
   {
     nome: "Laboratório Dimensional",
     imagem: "./imgs/imi/labDimensional.jpg",
-    link: "/laboratorios/dimensional",
+    link: "/laboratorios#dimensional",
   },
   {
     nome: "Laboratório de Eletricidade",
     imagem: "./imgs/imi/labEletrica.jpg",
-    link: "/laboratorios/eletricidade/",
+    link: "/laboratorios#eletricidade",
   },
   {
     nome: "Laboratório de Pressão",
     imagem: "./imgs/imi/labPressao.jpg",
-    link: "/laboratorios/pressao/",
+    link: "/laboratorios#pressao",
   },
   {
     nome: "Laboratório de Temperatura e Umidade",
     imagem: "./imgs/imi/labTemp.jpg",
-    link: "/laboratorios/temperatura/",
+    link: "/laboratorios#temperatura",
   },
   {
     nome: "Laboratório de Força, Torque e Dureza",
     imagem: "./imgs/imi/labTorque.jpg",
-    link: "/laboratorios/forca/",
+    link: "/laboratorios#forca",
   },
 ];
 

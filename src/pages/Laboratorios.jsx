@@ -16,8 +16,6 @@ import { whatsappUrl } from "../components/whatsapp";
 import { scrollDown } from "../lib/scrollDown";
 import CTACalib from "../components/CTACalib";
 
-const mensagem = "Olá! Vim pelo site e gostaria de saber mais sobre os serviços de Calibração do IMI."
-
 const laboratorios = [
   {
     id: "dimensional",

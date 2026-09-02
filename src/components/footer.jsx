@@ -163,7 +163,7 @@ export default function Footer() {
                     </Link>
                   </li>
 
-                  <li>
+                  {/* <li>
                     <Link
                       to="/produtos"
                       className="
@@ -175,7 +175,7 @@ export default function Footer() {
                     >
                       Produtos
                     </Link>
-                  </li>
+                  </li> */}
 
                   <li>
                     <Link

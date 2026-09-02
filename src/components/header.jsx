@@ -80,7 +80,7 @@ export default function Header() {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link
                 to="/produtos"
                 className="
@@ -92,7 +92,7 @@ export default function Header() {
               >
                 Produtos
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link
@@ -238,7 +238,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link
                   to="/produtos"
                   onClick={fecharMenu}
@@ -255,7 +255,7 @@ export default function Header() {
                 >
                   Produtos
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link
